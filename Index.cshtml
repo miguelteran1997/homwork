@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<style>
+    body{
+        text-align:center;
+    }
+    header {
+        width: 50px;
+        height: 423px;
+        
+    }
+</style>
+<button><a href="Can">Can</a></button>
+<button><a href="CandystoreS">CandystoreS</a></button>
+<button><a href="Own">Own</a></button>
+<div class="text-center">
+    <h1 class="display-3">Welcome MY candy shop</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>the can button connects to the owners class , the candystore connects to the candystores button and the candy button functionality but how all these are connected the owner class has all the foreign keys . letting me see each  page </p>
+    
+   @if (User.IsInRole("Admin")) { 
+    <section>
+        <h1>welcome, administrator!</h1>
+    </section>
+    }
+    else if (User.IsInRole("Candys"))
+    {
+    <section>
+        <h1>Welcome, Candys</h1>
+    </section>
+    }
+    else if (User.IsInRole("Candys1"))
+    {
+    <section>
+        <h1>Welcome, Candys2</h1>
+    </section>
+   } else
+   {
+       <section>
+           <h1>Welcome</h1>
+       </section>
+   }
+</div>
